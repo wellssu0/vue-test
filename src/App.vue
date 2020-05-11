@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link :to="{name:'Home'}">Home</router-link> |
+      <router-link :to="{name:'About'}">About</router-link>
+      <!-- <router-link to="/list/hi" id="Hi">List</router-link> -->
+      <!-- 动态路由 -->
+      <router-link :to="{name:'List',params:{id:'hah'}}">List</router-link>
     </div>
+    <!-- 命名视图 -->
     <router-view/>
+    <router-view name="email"></router-view>
+    <router-view name="tel"></router-view>
   </div>
 </template>
 
